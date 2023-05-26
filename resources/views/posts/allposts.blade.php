@@ -50,14 +50,16 @@
                             <td>{{ $post['body'] }}</td>
                             <td>{{ $post['created_at'] }}</td>
                             <td>{{ $post['updated_at'] }}</td>
-                            <td>
-                                <a href="{{ route('posts.edit', ['post' => $post['id']]) }}">Edite</a>
-                                <a href="{{ route('posts.show', ['post' => $post['id']]) }}">Show</a>
+                            <td class="d-flex">
+                                <a href="{{ route('posts.edit', ['post' => $post['id']]) }}"
+                                    class="btn btn-secondary ">Edite</a>
+                                <a href="{{ route('posts.show', ['post' => $post['id']]) }}"
+                                    class="btn btn-primary">Show</a>
                                 <form action="{{ route('posts.destroy', ['post' => $post['id']]) }}" method="post">
                                     @csrf
                                     @method('delete')
                                     <input type="submit" class="btn btn-danger"
-                                        onclick="return confirm('Are You Soure Delete This Products ?')" value="delete">
+                                        onclick="return confirm('Are You Soure Delete This Products ?')" value="Delete">
                                 </form>
                             </td>
                         </tr>
